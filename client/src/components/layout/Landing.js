@@ -4,6 +4,7 @@ import axios from "axios";
 import Form from "../form/Form";
 import Map from "../map/Map";
 import NewsList from "../news/NewsList";
+import mapAPI from "../../config/keys";
 
 class Landing extends Component {
   constructor(props) {
@@ -32,9 +33,10 @@ class Landing extends Component {
 
   onSubmit(event) {
     event.preventDefault();
+    console.log(mapAPI.mapAPI);
     const url = `https://maps.googleapis.com/maps/api/staticmap?center=${
       this.state.city
-    }&scale=1&size=800x400&maptype=roadmap&format=png`;
+    }&scale=1&size=800x400&maptype=roadmap&format=png&key=${mapAPI.mapAPI}`;
     this.setState({ src: url, glance: true });
     this.onFetchData(this.state.city);
   }
