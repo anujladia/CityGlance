@@ -15,8 +15,7 @@ router.get("/:city_name", (req, res) => {
   let url =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     city +
-    "&units=metric&appid=" +
-    APIKey;
+    "&units=metric&appid=7e55104a01e3428d636077190abe7a9e";
 
   request(url, function(err, response, body) {
     if (err) {

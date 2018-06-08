@@ -33,9 +33,11 @@ class Landing extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const url = `https://maps.googleapis.com/maps/api/staticmap?center=${
+
+    const url = `//maps.googleapis.com/maps/api/staticmap?center=${
       this.state.city
-    }&scale=1&size=800x400&maptype=roadmap&format=png&key=${mapAPI.mapAPI}`;
+    }&scale=1&size=800x400&maptype=roadmap&format=png&key=AIzaSyAyFOvgA-e3qcH_orW9-O67qHdcYnki6OU`;
+    console.log(url);
     this.setState({ src: url, glance: true });
     this.onFetchData(this.state.city);
   }
